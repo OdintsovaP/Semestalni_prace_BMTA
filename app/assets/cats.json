@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "name": "Zrzek",
+    "age": "2 roky",
+    "breed": "Zrzavý kocour",
+    "personality": "Hravý, láskyplný",
+    "image": "https://images.unsplash.com/photo-1667518158890-0a6cf60de601?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmFuZ2UlMjB0YWJieSUyMGNhdHxlbnwxfHx8fDE3NjYyMjI1NDV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "description": "Velmi přátelský kocour, miluje si hrát a dostávat pozornost. Skvěle vychází s dětmi.",
+    "available": true
+  },
+  {
+    "id": "2",
+    "name": "Luna",
+    "age": "2 roky",
+    "breed": "Siamská",
+    "personality": "Jemná, mazlivá",
+    "image": "https://images.unsplash.com/photo-1568152950566-c1bf43f4ab28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaWFtZXNlJTIwY2F0fGVufDF8fHx8MTc2NjI1NDkyNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "description": "Jemná, mazlivá kočička, která miluje teplé deky a sleduje padající sníh z okna. Ráda se nechá hladit a tiše přede, když je spokojená. Oblíbené: škrabadlo, lososové pamlsky, vánoční světýlka.",
+    "available": true
+  },
+  {
+    "id": "3",
+    "name": "Béďa",
+    "age": "4 roky",
+    "breed": "Britská krátkosrstá",
+    "personality": "Klidný, nezávislý",
+    "image": "https://images.unsplash.com/photo-1629624467541-f73ef8f12df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicml0aXNoJTIwc2hvcnRoYWlyJTIwY2F0fGVufDF8fHx8MTc2NjI4MTgwNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "description": "Vznešený kocour-gentleman. Preferuje klidné prostředí a pomalé hry. Miluje dlouhé odpolední dřímoty v teplém slunci.",
+    "available": false
+  },
+  {
+    "id": "4",
+    "name": "Sněhurka",
+    "age": "1 rok",
+    "breed": "Bílá chlupatá",
+    "personality": "Hravá, zvědavá",
+    "image": "https://images.unsplash.com/photo-1629624467541-f73ef8f12df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicml0aXNoJTIwc2hvcnRoYWlyJTIwY2F0fGVufDF8fHx8MTc2NjI4MTgwNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "description": "Mladá kočička plná energie. Miluje objevovat nové věci a hrát si s hračkami. Její bílá srst připomíná čerstvý sníh.",
+    "available": true
+  },
+  {
+    "id": "5",
+    "name": "Mourek",
+    "age": "5 let",
+    "breed": "Šedý pruhovaný",
+    "personality": "Moudrý, láskyplný",
+    "image": "https://images.unsplash.com/photo-1667518158890-0a6cf60de601?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmFuZ2UlMjB0YWJieSUyMGNhdHxlbnwxfHx8fDE3NjYyMjI1NDV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "description": "Zkušený kocour, který ví, co je pohodlí. Ideální pro klidný domov. Rád se tulí na pohovce a sleduje televizi s vámi.",
+    "available": true
+  },
+  {
+    "id": "6",
+    "name": "Tygřík",
+    "age": "2 roky",
+    "breed": "Bengálská",
+    "personality": "Aktivní, energická",
+    "image": "https://images.unsplash.com/photo-1629624467541-f73ef8f12df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicml0aXNoJTIwc2hvcnRoYWlyJTIwY2F0fGVufDF8fHx8MTc2NjI4MTgwNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    "description": "Exotická kráska s divokou kresbou. Velmi aktivní a miluje výšky. Potřebuje dostatek prostoru pro hry a skotačení.",
+    "available": true
+  }
+]

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Можно использовать MaterialCardView для красивой тени и скругленных углов -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- 1. Иконка. ID должно быть @+id/featureIcon -->
+        <ImageView
+            android:id="@+id/featureIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_gift"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="Ikona" />
+
+        <!-- 2. Заголовок. ID должно быть @+id/featureTitle -->
+        <TextView
+            android:id="@+id/featureTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Název funkce"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/featureIcon"
+            app:layout_constraintTop_toTopOf="@id/featureIcon" />
+
+        <!-- 3. Подзаголовок. ID должно быть @+id/featureSubtitle -->
+        <TextView
+            android:id="@+id/featureSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Popis funkce"
+            android:textAppearance="?attr/textAppearanceBody2"
+            app:layout_constraintEnd_toEndOf="@id/featureTitle"
+            app:layout_constraintStart_toStartOf="@id/featureTitle"
+            app:layout_constraintTop_toBottomOf="@id/featureTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

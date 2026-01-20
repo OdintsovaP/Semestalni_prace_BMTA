@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mnauhouse.ui.fragment.HomeFragment"
+        android:label="Domů"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.mnauhouse.ui.fragment.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu" />
+
+    <fragment
+        android:id="@+id/catsFragment"
+        android:name="com.example.mnauhouse.ui.fragment.CatsFragment"
+        android:label="Kočky"
+        tools:layout="@layout/fragment_cats" />
+
+    <fragment
+        android:id="@+id/adoptionFragment"
+        android:name="com.example.mnauhouse.ui.fragment.AdoptionFragment"
+        android:label="Adopce"
+        tools:layout="@layout/fragment_adoption" />
+
+    <fragment
+        android:id="@+id/shelterFragment"
+        android:name="com.example.mnauhouse.ui.fragment.ShelterFragment"
+        android:label="Útulek"
+        tools:layout="@layout/fragment_shelter" />
+
+    <fragment
+        android:id="@+id/donateFragment"
+        android:name="com.example.mnauhouse.ui.fragment.DonateFragment"
+        android:label="Darovat"
+        tools:layout="@layout/fragment_donate" />
+
+</navigation>

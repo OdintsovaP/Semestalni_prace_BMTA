@@ -10,12 +10,11 @@ import com.example.mnauhouse.R
 import com.example.mnauhouse.ui.fragment.HomeFragment.QuickAction
 
 class QuickActionsAdapter(
-    private val onItemClick: (QuickAction) -> Unit  // Callback pro kliknutí
+    private val onItemClick: (QuickAction) -> Unit
 ) : RecyclerView.Adapter<QuickActionsAdapter.QuickActionViewHolder>() {
 
     private var quickActions = listOf<QuickAction>()
 
-    // Metoda pro aktualizaci seznamu
     fun submitList(actions: List<QuickAction>) {
         quickActions = actions
         notifyDataSetChanged()
@@ -38,10 +37,9 @@ class QuickActionsAdapter(
         private val titleTextView: TextView = itemView.findViewById(R.id.actionTitle)
 
         fun bind(action: QuickAction) {
-            iconImageView.setImageResource(action.iconRes)  // Nastavení ikony
-            titleTextView.text = action.title  // Nastavení názvu
-
-            itemView.setOnClickListener { onItemClick(action) }  // Kliknutí
+            iconImageView.setImageResource(action.iconRes)
+            titleTextView.text = action.title
+            itemView.setOnClickListener { onItemClick(action) }
         }
     }
 }

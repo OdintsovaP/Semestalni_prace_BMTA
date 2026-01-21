@@ -50,7 +50,7 @@
         android:id="@+id/addToCartButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:src="@drawable/img"
+        android:src="@drawable/ic_add"
         android:contentDescription="Přidat do košíku"
         android:layout_gravity="center_vertical" />
 

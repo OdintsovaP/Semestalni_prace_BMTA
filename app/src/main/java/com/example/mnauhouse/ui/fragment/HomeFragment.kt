@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mnauhouse.MainActivity
 import com.example.mnauhouse.R
 import com.example.mnauhouse.ui.adapter.QuickActionsAdapter
 import com.example.mnauhouse.ui.adapter.FeaturesAdapter
@@ -31,16 +33,26 @@ class HomeFragment : Fragment() {
         quickActionsRecyclerView = view.findViewById(R.id.quickActionsRecyclerView)
         quickActionsRecyclerView.layoutManager = GridLayoutManager(context, 2)  // 2 sloupce
         val quickActions = listOf(
-            QuickAction("Menu", R.drawable.coffee, "menuFragment"),
-            QuickAction("Objednat", R.drawable.ic_cart, "menuFragment"),
-            QuickAction("Naše kočky", R.drawable.animal, "catsFragment"),
-            QuickAction("Adopce", R.drawable.heart, "adoptionFragment"),
-            QuickAction("Rezervace stolu", R.drawable.ic_calendar, null),  // Žádná navigace
-            QuickAction("Vánoční nabídka", R.drawable.ic_gift, "menuFragment")
+            QuickAction("Menu", R.drawable.coffee, R.id.menuFragment),
+            QuickAction("Objednat", R.drawable.ic_cart, R.id.orderFragment),  // Изменено: ведет в OrderFragment
+            QuickAction("Naše kočky", R.drawable.animal, R.id.catsFragment),
+            QuickAction("Adopce", R.drawable.heart, R.id.adoptionFragment),
+            QuickAction("Rezervace stolu", R.drawable.ic_calendar, null),  // Диалог
+            QuickAction("Vánoční nabídka", R.drawable.ic_gift, R.id.menuFragment)
         )
         val quickActionsAdapter = QuickActionsAdapter { action ->
-            action.navDestination?.let { destination ->
-                findNavController().navigate(destination)  // Navigace
+            if (action.navDestinationId != null) {
+                val bottomNavigationView = (activity as MainActivity).bottomNavigationView
+                if (action.navDestinationId == R.id.orderFragment) {
+                    // Для OrderFragment используйте navigate (не в нижней навигации)
+                    findNavController().navigate(R.id.orderFragment)
+                } else {
+                    // Для остальных — синхронизируйте с нижней навигацией
+                    bottomNavigationView.selectedItemId = action.navDestinationId
+                }
+            } else {
+                // Для "Rezervace stolu" показываем диалог
+                showReservationDialog()
             }
         }
         quickActionsAdapter.submitList(quickActions)
@@ -61,6 +73,11 @@ class HomeFragment : Fragment() {
     }
 
     // Datové třídy pro adaptéry
-    data class QuickAction(val title: String, val iconRes: Int, val navDestination: String?)
+    data class QuickAction(val title: String, val iconRes: Int, val navDestinationId: Int?)
     data class Feature(val title: String, val subtitle: String, val iconRes: Int)
+
+    // Метод для диалога бронирования
+    private fun showReservationDialog() {
+        Toast.makeText(context, "Funkce rezervace bude přidána", Toast.LENGTH_SHORT).show()
+    }
 }

@@ -17,7 +17,7 @@
         android:icon="@drawable/heart"
         android:title="Adopce" />
     <item
-        android:id="@+id/shelterFragment"
-        android:icon="@drawable/ic_home"
-        android:title="Útulek" />
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_user"
+        android:title="Účet" />
 </menu>

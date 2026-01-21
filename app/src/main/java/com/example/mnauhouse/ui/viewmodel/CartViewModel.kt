@@ -2,7 +2,6 @@ package com.example.mnauhouse.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.map
 import com.example.mnauhouse.data.model.CartItem
 import com.example.mnauhouse.data.repository.CartRepository
@@ -10,6 +9,7 @@ import com.example.mnauhouse.data.repository.CartRepository
 class CartViewModel(private val repository: CartRepository) : ViewModel() {
 
     val cartItems: LiveData<List<CartItem>> = repository.cartItems
+    val allCartItems: LiveData<List<CartItem>> = cartItems  // Для CheckoutFragment
     val cartItemCount: LiveData<Int> = cartItems.map { items -> items.sumOf { it.quantity } }
 
     fun addToCart(item: CartItem) {
@@ -32,8 +32,7 @@ class CartViewModel(private val repository: CartRepository) : ViewModel() {
         return cartItems.map { items -> items.sumOf { it.price * it.quantity } }
     }
 
-    class CartViewModelFactory(private val repository: CartRepository) :
-        ViewModelProvider.Factory {
+    class CartViewModelFactory(private val repository: CartRepository) : androidx.lifecycle.ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(CartViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")

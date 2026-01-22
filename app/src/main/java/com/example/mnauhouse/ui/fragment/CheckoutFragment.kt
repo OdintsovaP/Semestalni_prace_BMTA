@@ -63,7 +63,7 @@ class CheckoutFragment : Fragment() {
         }
 
         // Pozorování dat
-        cartViewModel.allCartItems.observe(viewLifecycleOwner) { items ->
+        cartViewModel.cartItems.observe(viewLifecycleOwner) { items ->
             adapter.submitList(items)
             val total = items.sumOf { it.price * it.quantity }
             totalTextView.text = "Celkem: $total Kč"

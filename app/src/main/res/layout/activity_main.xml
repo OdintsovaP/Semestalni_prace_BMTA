@@ -44,12 +44,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
             <ImageButton
-                android:id="@+id/profileButton"
+                android:id="@+id/themeToggleButton"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/ic_user"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="Toggle theme"
+                android:src="@drawable/bright"
+                android:tint="?android:attr/textColorPrimary"
+                app:layout_constraintEnd_toStartOf="@id/cartButton"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -58,8 +60,20 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="?android:attr/selectableItemBackground"
-                android:src="@drawable/ic_cart"
+                android:src="@drawable/ic_shop"
+                android:tint="?android:attr/textColorPrimary"
                 app:layout_constraintEnd_toStartOf="@id/profileButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageButton
+                android:id="@+id/profileButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_user"
+                android:tint="?android:attr/textColorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 

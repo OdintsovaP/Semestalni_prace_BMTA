@@ -36,7 +36,7 @@ class UserRepository(private val context: Context) {
         return getUsers().find { it.email == email && it.password == password }
     }
 
-    // Сохранить текущего пользователя (после входа)
+    // Сохранить текущего пользователя
     fun saveCurrentUser(user: User) {
         val json = gson.toJson(user)
         prefs.edit().putString("current_user", json).apply()
@@ -51,5 +51,21 @@ class UserRepository(private val context: Context) {
     // Выйти (очистить текущего пользователя)
     fun logout() {
         prefs.edit().remove("current_user").apply()
+    }
+
+    // Обновить баланс текущего пользователя (пополнение или списание)
+    fun updateBalance(amount: Double) {
+        val currentUser = getCurrentUser()
+        if (currentUser != null) {
+            val updatedUser = currentUser.copy(balance = currentUser.balance + amount)
+            saveCurrentUser(updatedUser)
+            // Также обновить в списке пользователей
+            val users = getUsers().toMutableList()
+            val index = users.indexOfFirst { it.id == currentUser.id }
+            if (index != -1) {
+                users[index] = updatedUser
+                saveUsers(users)
+            }
+        }
     }
 }

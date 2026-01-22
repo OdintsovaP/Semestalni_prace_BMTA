@@ -91,4 +91,11 @@
         android:label="Objednávka"
         tools:layout="@layout/fragment_checkout" />
 
+    <!-- ShelterFragment -->
+    <fragment
+        android:id="@+id/shelterFragment"
+        android:name="com.example.mnauhouse.ui.fragment.ShelterFragment"
+        android:label="Útulky"
+        tools:layout="@layout/fragment_shelter" />
+
 </navigation>

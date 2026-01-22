@@ -4,5 +4,6 @@ data class User(
     val id: String,  // Уникальный ID (можно использовать UUID)
     val email: String,
     val password: String,  // В реальном приложении хэшировать!
-    val name: String
+    val name: String,
+    val balance: Double = 0.0  // Добавлено: баланс пользователя
 )

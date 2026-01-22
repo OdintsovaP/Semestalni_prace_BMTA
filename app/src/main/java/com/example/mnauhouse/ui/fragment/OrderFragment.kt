@@ -56,7 +56,15 @@ class OrderFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         adapter = MenuAdapter(
             onItemClick = { /* Klik na položku */ },
-            onAddToCartClick = { menuItem -> addToCart(menuItem) }
+            onAddToCartClick = { menuItem -> addToCart(menuItem) },
+            onUpdateCartQuantity = { menuItem, newQuantity ->
+                // Находим соответствующий CartItem
+                val cartItem = cartViewModel.cartItems.value?.find { it.id == menuItem.id }
+                if (cartItem != null) {
+                    // Вызываем метод из ViewModel для обновления
+                    cartViewModel.updateQuantity(cartItem, newQuantity)
+                }
+            }
         )
         recyclerView.adapter = adapter
 

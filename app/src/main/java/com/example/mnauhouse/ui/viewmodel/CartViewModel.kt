@@ -24,6 +24,15 @@ class CartViewModel(private val repository: CartRepository) : ViewModel() {
         repository.removeFromCart(id)
     }
 
+    fun updateQuantity(item: CartItem, newQuantity: Int) {
+        if (newQuantity > 0) {
+            val updatedItem = item.copy(quantity = newQuantity)
+            repository.updateCartItem(updatedItem)
+        } else {
+            repository.removeFromCart(item.id)
+        }
+    }
+
     fun clearCart() {
         repository.clearCart()
     }

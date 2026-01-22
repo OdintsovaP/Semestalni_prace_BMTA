@@ -36,18 +36,38 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Perníkové cappuccino" />
 
+        <!-- Кнопка минус -->
+        <ImageButton
+            android:id="@+id/minusButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_remove"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintEnd_toStartOf="@+id/cartItemQuantity"
+            app:layout_constraintTop_toTopOf="@+id/cartItemQuantity" />
+
         <!-- Množství -->
         <TextView
             android:id="@+id/cartItemQuantity"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:textColor="?android:attr/textColorSecondary"
-            app:layout_constraintEnd_toStartOf="@+id/removeButton"
-            app:layout_constraintStart_toEndOf="@+id/cartItemImage"
+            app:layout_constraintEnd_toStartOf="@+id/plusButton"
+            app:layout_constraintStart_toEndOf="@+id/minusButton"
             app:layout_constraintTop_toBottomOf="@+id/cartItemName"
             tools:text="Množství: 1" />
+
+        <!-- Кнопка плюс -->
+        <ImageButton
+            android:id="@+id/plusButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_add"
+            android:background="?android:attr/selectableItemBackground"
+            app:layout_constraintEnd_toStartOf="@+id/removeButton"
+            app:layout_constraintTop_toTopOf="@+id/cartItemQuantity" />
 
         <!-- Cena -->
         <TextView

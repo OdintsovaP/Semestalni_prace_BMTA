@@ -3,6 +3,7 @@ package com.example.mnauhouse.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -40,6 +41,8 @@ class CartAdapter(
         private val quantityText: TextView = itemView.findViewById(R.id.cartItemQuantity)
         private val priceText: TextView = itemView.findViewById(R.id.cartItemPrice)
         private val removeButton: View = itemView.findViewById(R.id.removeButton)
+        private val plusButton: ImageButton = itemView.findViewById(R.id.plusButton)
+        private val minusButton: ImageButton = itemView.findViewById(R.id.minusButton)
 
         fun bind(cartItem: CartItem) {
             nameText.text = cartItem.name
@@ -52,6 +55,18 @@ class CartAdapter(
                 .into(imageView)
 
             removeButton.setOnClickListener { onRemoveItem(cartItem) }
+
+            plusButton.setOnClickListener {
+                cartItem.quantity += 1
+                onUpdateQuantity(cartItem, cartItem.quantity)
+            }
+
+            minusButton.setOnClickListener {
+                if (cartItem.quantity > 1) {
+                    cartItem.quantity -= 1
+                    onUpdateQuantity(cartItem, cartItem.quantity)
+                }
+            }
         }
     }
 }

@@ -38,7 +38,7 @@ class CartBottomSheetFragment : BottomSheetDialogFragment() {
 
         val cartRepository = CartRepository(requireContext())
         cartViewModel = ViewModelProvider(
-            this,
+            requireActivity(),
             CartViewModel.CartViewModelFactory(cartRepository)
         )[CartViewModel::class.java]
 
@@ -50,34 +50,32 @@ class CartBottomSheetFragment : BottomSheetDialogFragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         adapter = CartAdapter(
             onUpdateQuantity = { cartItem, newQuantity ->
-                cartItem.quantity = newQuantity
-                cartViewModel.updateCartItem(cartItem)
-            },
-            onRemoveItem = { cartItem ->
-                cartViewModel.removeFromCart(cartItem.id)
-                Toast.makeText(context, "${cartItem.name} удален из корзины", Toast.LENGTH_SHORT).show()
+                if (newQuantity > 0) {
+                    cartItem.quantity = newQuantity
+                    cartViewModel.updateCartItem(cartItem)
+                } else {
+                    cartViewModel.removeFromCart(cartItem.id)
+                }
             }
         )
+
         recyclerView.adapter = adapter
 
-        // Кнопка "Заказать" — переход к checkout
         orderButton.setOnClickListener {
             if (cartViewModel.cartItems.value?.isNotEmpty() == true) {
                 val navController = (activity as MainActivity).navController
                 navController.navigate(R.id.checkoutFragment)
                 dismiss()
             } else {
-                Toast.makeText(context, "Корзина пуста", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Košík je prázdný", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Кнопка "Очистить корзину"
         clearButton.setOnClickListener {
             cartViewModel.clearCart()
-            Toast.makeText(context, "Корзина очищена", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Košík byl vyprázdněn", Toast.LENGTH_SHORT).show()
         }
 
-        // Наблюдение за данными
         cartViewModel.cartItems.observe(viewLifecycleOwner) { items ->
             if (items.isEmpty()) {
                 recyclerView.visibility = View.GONE

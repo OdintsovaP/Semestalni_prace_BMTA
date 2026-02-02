@@ -37,10 +37,26 @@ class CatsAdapter(
         holder.info.text = "${cat.age} • ${cat.breed}"
         holder.description.text = cat.personality
 
-        Glide.with(holder.itemView)
-            .load(cat.image)
-            .placeholder(R.drawable.animal)
-            .into(holder.image)
+        val context = holder.itemView.context
+        val imagePath = cat.image
+
+        // УНИВЕРСАЛЬНАЯ ЛОГИКА ЗАГРУЗКИ
+        if (imagePath.startsWith("http")) {
+            // Если это ссылка, грузим из интернета
+            Glide.with(context)
+                .load(imagePath)
+                .placeholder(R.drawable.animal)
+                .error(R.drawable.animal)
+                .into(holder.image)
+        } else {
+            // Иначе, ищем картинку в drawable
+            val resourceId = context.resources.getIdentifier(imagePath, "drawable", context.packageName)
+            Glide.with(context)
+                .load(if (resourceId == 0) R.drawable.animal else resourceId) // Если не нашли, ставим картинку по-умолчанию
+                .placeholder(R.drawable.animal)
+                .error(R.drawable.animal)
+                .into(holder.image)
+        }
 
         holder.button.setOnClickListener {
             onAdoptClick(cat)

@@ -4,7 +4,7 @@
     "name": "Cappuccino",
     "price": 65,
     "description": "Káva s mléčnou pěnou",
-    "image": "https://i.imgur.com/1Q9Z1Z1.png",
+    "image": "cappuccinos",
     "category": "hot",
     "emoji": "☕"
   },
@@ -13,7 +13,7 @@
     "name": "Latte Macchiato",
     "price": 72,
     "description": "Sladká mléčná káva",
-    "image": "https://i.imgur.com/2Q9Z1Z1.png",
+    "image": "latte_macchiato",
     "category": "hot",
     "emoji": "🥛"
   },
@@ -22,7 +22,7 @@
     "name": "Flat White",
     "price": 75,
     "description": "Silná káva s mlékem",
-    "image": "https://i.imgur.com/3Q9Z1Z1.png",
+    "image": "flat_white",
     "category": "hot",
     "emoji": "☕"
   },
@@ -31,7 +31,7 @@
     "name": "Espresso",
     "price": 45,
     "description": "Silná dávka energie",
-    "image": "https://i.imgur.com/4Q9Z1Z1.png",
+    "image": "espresso",
     "category": "hot",
     "emoji": "⚡"
   },
@@ -40,7 +40,7 @@
     "name": "Iced Latte",
     "price": 72,
     "description": "Ledová káva s mlékem",
-    "image": "https://i.imgur.com/5Q9Z1Z1.png",
+    "image": "iced_latte",
     "category": "cold",
     "emoji": "🧊"
   },
@@ -49,7 +49,7 @@
     "name": "Cold Brew",
     "price": 68,
     "description": "Studená filtrovaná káva",
-    "image": "https://i.imgur.com/6Q9Z1Z1.png",
+    "image": "cold_brew",
     "category": "cold",
     "emoji": "🧊"
   },
@@ -58,7 +58,7 @@
     "name": "Iced Tea",
     "price": 55,
     "description": "Osvěžující čaj s ledem",
-    "image": "https://i.imgur.com/7Q9Z1Z1.png",
+    "image": "iced_tea",
     "category": "cold",
     "emoji": "🍋"
   },
@@ -67,7 +67,7 @@
     "name": "Cheesecake",
     "price": 89,
     "description": "Domácí cheesecake",
-    "image": "https://i.imgur.com/8Q9Z1Z1.png",
+    "image": "cheesecake",
     "category": "desserts",
     "emoji": "🍰"
   },
@@ -76,7 +76,7 @@
     "name": "Čokoládový dort",
     "price": 95,
     "description": "Bohatá čokoládová chuť",
-    "image": "https://i.imgur.com/9Q9Z1Z1.png",
+    "image": "cokoladovy_dort",
     "category": "desserts",
     "emoji": "🍫"
   },
@@ -85,7 +85,7 @@
     "name": "Jablečný koláč",
     "price": 79,
     "description": "Tradiční domácí koláč",
-    "image": "https://i.imgur.com/10Q9Z1Z1.png",
+    "image": "jablecny_kolac",
     "category": "desserts",
     "emoji": "🥧"
   },
@@ -94,7 +94,7 @@
     "name": "Kočičí sušenky",
     "price": 40,
     "description": "Pamlsky pro kočky",
-    "image": "https://i.imgur.com/11Q9Z1Z1.png",
+    "image": "kocici",
     "category": "cats",
     "emoji": "🐾"
   },
@@ -103,7 +103,7 @@
     "name": "Kočičí kapsička",
     "price": 55,
     "description": "Mokré krmivo pro kočky",
-    "image": "https://i.imgur.com/12Q9Z1Z1.png",
+    "image": "prima_cat",
     "category": "cats",
     "emoji": "🐱"
   },
@@ -112,7 +112,7 @@
     "name": "Kočičí mléko",
     "price": 30,
     "description": "Bez laktózy",
-    "image": "https://i.imgur.com/13Q9Z1Z1.png",
+    "image": "gimcat_milk",
     "category": "cats",
     "emoji": "🥛"
   },
@@ -121,7 +121,7 @@
     "name": "Vánoční punč",
     "price": 75,
     "description": "Speciální vánoční nabídka",
-    "image": "https://i.imgur.com/14Q9Z1Z1.png",
+    "image": "nealko_punc",
     "category": "christmas",
     "emoji": "🎄"
   },
@@ -130,7 +130,7 @@
     "name": "Svařák",
     "price": 70,
     "description": "Horké vánoční víno",
-    "image": "https://i.imgur.com/15Q9Z1Z1.png",
+    "image": "svarak",
     "category": "christmas",
     "emoji": "🍷"
   },
@@ -139,7 +139,7 @@
     "name": "Horká čokoláda",
     "price": 65,
     "description": "Sladká a krémová",
-    "image": "https://i.imgur.com/16Q9Z1Z1.png",
+    "image": "horka_cokolada",
     "category": "hot",
     "emoji": "🍫"
   },
@@ -148,7 +148,7 @@
     "name": "Matcha Latte",
     "price": 78,
     "description": "Japonský zelený čaj",
-    "image": "https://i.imgur.com/17Q9Z1Z1.png",
+    "image": "matcha_latte",
     "category": "hot",
     "emoji": "🍵"
   },
@@ -157,7 +157,7 @@
     "name": "Bubble Tea",
     "price": 85,
     "description": "Sladký nápoj s tapiokou",
-    "image": "https://i.imgur.com/18Q9Z1Z1.png",
+    "image": "bubble_tea",
     "category": "cold",
     "emoji": "🧋"
   },
@@ -166,7 +166,7 @@
     "name": "Brownie",
     "price": 69,
     "description": "Čokoládová dobrota",
-    "image": "https://i.imgur.com/19Q9Z1Z1.png",
+    "image": "brownie",
     "category": "desserts",
     "emoji": "🍫"
   },
@@ -175,7 +175,7 @@
     "name": "Kočičí konzerva",
     "price": 60,
     "description": "Prémiové krmivo",
-    "image": "https://i.imgur.com/20Q9Z1Z1.png",
+    "image": "kocici_konzerva",
     "category": "cats",
     "emoji": "🐈"
   },
@@ -184,7 +184,7 @@
     "name": "Vánoční dortík",
     "price": 90,
     "description": "Sladká vánoční pochoutka",
-    "image": "https://i.imgur.com/21Q9Z1Z1.png",
+    "image": "vanocni_dortik",
     "category": "christmas",
     "emoji": "🎅"
   },
@@ -193,7 +193,7 @@
     "name": "Zázvorový čaj",
     "price": 55,
     "description": "Horký čaj se zázvorem",
-    "image": "https://i.imgur.com/22Q9Z1Z1.png",
+    "image": "zazvorovy_caj",
     "category": "hot",
     "emoji": "🍵"
   }

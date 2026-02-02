@@ -17,15 +17,18 @@ import com.example.mnauhouse.data.repository.MenuRepository
 import com.example.mnauhouse.ui.adapter.MenuAdapter
 import com.example.mnauhouse.ui.viewmodel.CartViewModel
 import com.example.mnauhouse.ui.viewmodel.MenuViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
+import android.widget.TextView
 
 class OrderFragment : Fragment() {
 
-    private lateinit var viewModel: MenuViewModel
+    private lateinit var menuViewModel: MenuViewModel
     private lateinit var cartViewModel: CartViewModel
     private lateinit var adapter: MenuAdapter
     private lateinit var recyclerView: RecyclerView
-    private lateinit var checkoutButton: MaterialButton
+    private lateinit var goToCartButton: MaterialButton
+    private lateinit var totalTextView: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,55 +40,61 @@ class OrderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Inicializace repository a ViewModel
         val menuRepository = MenuRepository(requireContext())
         val cartRepository = CartRepository(requireContext())
 
-        viewModel = ViewModelProvider(
+        menuViewModel = ViewModelProvider(
             this,
             MenuViewModel.MenuViewModelFactory(menuRepository)
         )[MenuViewModel::class.java]
 
         cartViewModel = ViewModelProvider(
-            this,
+            requireActivity(),
             CartViewModel.CartViewModelFactory(cartRepository)
         )[CartViewModel::class.java]
 
-        // Nastavení RecyclerView
         recyclerView = view.findViewById(R.id.orderRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
+
+        totalTextView = view.findViewById(R.id.orderTotalTextView)
+
         adapter = MenuAdapter(
-            onItemClick = { /* Klik na položku */ },
+            onItemClick = { },
             onAddToCartClick = { menuItem -> addToCart(menuItem) },
             onUpdateCartQuantity = { menuItem, newQuantity ->
-                // Находим соответствующий CartItem
                 val cartItem = cartViewModel.cartItems.value?.find { it.id == menuItem.id }
                 if (cartItem != null) {
-                    // Вызываем метод из ViewModel для обновления
                     cartViewModel.updateQuantity(cartItem, newQuantity)
+                } else if (newQuantity > 0) {
+                    addToCart(menuItem, newQuantity)
                 }
             }
         )
         recyclerView.adapter = adapter
 
-        // Tlačítko pro přechod k objednávce
-        checkoutButton = view.findViewById(R.id.checkoutButton)
-        checkoutButton.setOnClickListener {
-            findNavController().navigate(R.id.action_orderFragment_to_checkoutFragment)
+        goToCartButton = view.findViewById(R.id.goToCartButton)
+        goToCartButton.setOnClickListener {
+            val bottomSheet = CartBottomSheetFragment()
+            bottomSheet.show(parentFragmentManager, bottomSheet.tag)
         }
 
-        // Pozorování dat
-        viewModel.menuItems.observe(viewLifecycleOwner) { items ->
+        menuViewModel.menuItems.observe(viewLifecycleOwner) { items ->
             adapter.submitList(items)
+        }
+
+        cartViewModel.cartItems.observe(viewLifecycleOwner) { items ->
+            adapter.updateCartItems(items)
+            val total = items.sumOf { it.price * it.quantity }
+            totalTextView.text = "Celkem: $total Kč"
         }
     }
 
-    private fun addToCart(menuItem: MenuItem) {
+    private fun addToCart(menuItem: MenuItem, quantity: Int = 1) {
         val cartItem = CartItem(
             id = menuItem.id,
             name = menuItem.name,
             price = menuItem.price,
-            quantity = 1,
+            quantity = quantity,
             image = menuItem.image
         )
         cartViewModel.addToCart(cartItem)

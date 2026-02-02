@@ -1,86 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".ui.fragment.ShelterFragment">
+    android:padding="16dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <!-- Nadpis -->
         <TextView
-            android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Náš partner"
-            android:textSize="24sp"
+            android:text="Útulek pro kočky"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="?attr/colorPrimary"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="@color/purple_700"
+            android:layout_marginBottom="16dp" />
 
-        <!-- Popis -->
-        <TextView
-            android:id="@+id/descriptionTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Společně pomáháme opuštěným kočkám"
-            android:textColor="?android:attr/textColorSecondary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
-
-        <!-- Karta s informacemi o útulku -->
+        <!-- Informace o útulku -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/shelterCard"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="6dp"
             app:cardCornerRadius="16dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView">
+            app:cardUseCompatPadding="true">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Kočičí domov Praha"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:text="Náš partnerský útulek se stará o opuštěné kočky, poskytuje jim veterinární péči a hledá jim nové domovy."
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="12dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Kontakt: +420 123 456 789"
-                    android:textColor="?android:attr/textColorSecondary" />
+                    android:text="Adresa:"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/purple_700" />
+
+                <TextView
+                    android:id="@+id/textShelterAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kočičí útulek Pardubice, Sluneční 12"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Otevírací doba:"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/purple_700" />
+
+                <TextView
+                    android:id="@+id/textShelterHours"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Po–Pá: 10:00–18:00\nSo–Ne: 12:00–17:00"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="12dp" />
+
+                <Button
+                    android:id="@+id/buttonCallShelter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Zavolat útulku"
+                    android:backgroundTint="@color/purple_500"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp" />
+
+                <Button
+                    android:id="@+id/buttonOpenMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Otevřít v mapách"
+                    android:backgroundTint="@color/purple_700"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Tlačítko pro darování -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/donateButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Přispět útulku"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shelterCard"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </ScrollView>

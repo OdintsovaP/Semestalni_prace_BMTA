@@ -78,6 +78,7 @@ class HomeFragment : Fragment() {
 
     // Метод для диалога бронирования
     private fun showReservationDialog() {
-        Toast.makeText(context, "Funkce rezervace bude přidána", Toast.LENGTH_SHORT).show()
+        findNavController().navigate(R.id.reservationFragment)
     }
+
 }

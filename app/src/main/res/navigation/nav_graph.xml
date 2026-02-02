@@ -31,7 +31,18 @@
         android:id="@+id/adoptionFragment"
         android:name="com.example.mnauhouse.ui.fragment.AdoptionFragment"
         android:label="Adopce"
-        tools:layout="@layout/fragment_adoption" />
+        tools:layout="@layout/fragment_adopce" />
+
+    <action
+        android:id="@+id/action_catsFragment_to_adoptionFragment"
+        app:destination="@id/adoptionFragment" />
+
+    <!-- ReservationFragment -->
+    <fragment
+        android:id="@+id/reservationFragment"
+        android:name="com.example.mnauhouse.ui.fragment.ReservationFragment"
+        android:label="Rezervace"
+        tools:layout="@layout/fragment_reservation" />
 
     <!-- ProfileFragment -->
     <fragment
@@ -53,7 +64,6 @@
         android:label="Přihlásit se"
         tools:layout="@layout/fragment_login" >
 
-        <!-- Добавьте эти actions -->
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
@@ -95,7 +105,19 @@
     <fragment
         android:id="@+id/shelterFragment"
         android:name="com.example.mnauhouse.ui.fragment.ShelterFragment"
-        android:label="Útulky"
-        tools:layout="@layout/fragment_shelter" />
+        android:label="Útulek" />
+
+    <action
+        android:id="@+id/action_adoptionFragment_to_shelterFragment"
+        app:destination="@id/shelterFragment" />
+
+
+    <!-- DonateFragment -->
+    <fragment
+        android:id="@+id/donateFragment"
+        android:name="com.example.mnauhouse.ui.fragment.DonateFragment"
+        android:label="Přispět"
+        tools:layout="@layout/fragment_donate" />
+
 
 </navigation>

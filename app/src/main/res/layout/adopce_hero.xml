@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hero blok: hlavní sdělení o adopci -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Hlavní text -->
+        <TextView
+            android:id="@+id/textHeroMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Každá naše kočka si zaslouží teplý pelíšek a milující rodinu."
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Podtext -->
+        <TextView
+            android:id="@+id/textHeroSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Adopce je krásným krokem, který pomáhá nejen kočkám, ale i lidem najít nového přítele."
+            android:textSize="14sp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

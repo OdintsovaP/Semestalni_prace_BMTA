@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Informační blok: důležité upozornění o adopci -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Text upozornění -->
+        <TextView
+            android:id="@+id/textInfoBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Všechny dotazy ohledně adopce konkrétní kočky řešíme přímo v naší kavárně. Pokud máte zájem o adopci, zavolejte nám a domluvte si schůzku."
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Tlačítko Zavolat -->
+        <Button
+            android:id="@+id/buttonCallInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zavolat"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

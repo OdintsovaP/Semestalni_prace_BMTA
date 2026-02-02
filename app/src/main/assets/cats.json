@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Mourek",
+    "age": "2 roky",
+    "breed": "Evropská kočka",
+    "personality": "Hravý a společenský",
+    "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131"
+  },
+  {
+    "name": "Luna",
+    "age": "1 rok",
+    "breed": "Britská krátkosrstá",
+    "personality": "Klidná a mazlivá",
+    "image": "https://images.unsplash.com/photo-1511044568932-338cba0ad803"
+  },
+  {
+    "name": "Oliver",
+    "age": "3 roky",
+    "breed": "Mainská mývalí",
+    "personality": "Velký, chytrý, přátelský",
+    "image": "https://www.bing.com/images/search?view=detailV2&ccid=1%2FyZqJl0&id=E6B96CEED35FF8C55E93F9BB0882B58E8F3E19B5&thid=OIP.1_yZqJl0B7UenEzHlE3pBQHaHa&mediaurl=https%3A%2F%2Fcs1.livemaster.ru%2Fstorage%2F50%2Ff3%2Fa6269958e56381faa3f0676ccams--kukly-i-igrushki-trehtsvetnaya-koshka-taya.jpg&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.d7fc99a8997407b51e9c4cc7944de905%3Frik%3DtRk%252bj461ggi7%252bQ%26pid%3DImgRaw%26r%3D0&exph=1500&expw=1500&q=%D0%BA%D0%BE%D1%88%D0%BA%D0%B0&form=IRPRST&ck=B67BBEC9B58FC90E77ED288E5FD61079&selectedindex=8&itb=0&cw=1375&ch=659&ajaxhist=0&ajaxserp=0&vt=0&sim=11"
+  },
+  {
+    "name": "Mia",
+    "age": "8 měsíců",
+    "breed": "Sibiřská kočka",
+    "personality": "Zvědavá a aktivní",
+    "image": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+  },
+  {
+    "name": "Charlie",
+    "age": "4 roky",
+    "breed": "Evropská kočka",
+    "personality": "Miluje lidi a jídlo",
+    "image": "https://images.unsplash.com/photo-1517849845537-4d257902454a"
+  },
+  {
+    "name": "Nala",
+    "age": "2 roky",
+    "breed": "Siamská kočka",
+    "personality": "Hlasitá a chytrá",
+    "image": "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8"
+  },
+  {
+    "name": "Simba",
+    "age": "5 let",
+    "breed": "Perská kočka",
+    "personality": "Klidný a elegantní",
+    "image": "https://images.unsplash.com/photo-1508672019048-805c876b67e2"
+  },
+  {
+    "name": "Bella",
+    "age": "1 rok",
+    "breed": "Evropská kočka",
+    "personality": "Hravá a přítulná",
+    "image": "https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0"
+  },
+  {
+    "name": "Max",
+    "age": "6 let",
+    "breed": "Ragdoll",
+    "personality": "Velmi mazlivý",
+    "image": "https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+  },
+  {
+    "name": "Sofie",
+    "age": "3 roky",
+    "breed": "Evropská kočka",
+    "personality": "Tichá a přátelská",
+    "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131"
+  }
+]

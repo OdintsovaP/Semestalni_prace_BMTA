@@ -1,61 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Можно использовать CardView для красивого оформления -->
-<com.google.android.material.card.MaterialCardView
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    android:layout_margin="12dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="6dp">
 
     <LinearLayout
+        android:orientation="vertical"
+        android:padding="12dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <!-- 1. Картинка кошки. ID должно быть @+id/catImage -->
         <ImageView
             android:id="@+id/catImage"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:scaleType="centerCrop"
-            android:contentDescription="Fotka kočky" />
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/catName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mourek"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:id="@+id/catInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 roky • Evropská kočka"
+            android:textSize="14sp"
+            android:paddingTop="4dp"/>
+
+        <TextView
+            android:id="@+id/catDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hravý a společenský"
+            android:textSize="14sp"
+            android:paddingTop="4dp"/>
+
+        <Button
+            android:id="@+id/adoptButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- 2. Имя кошки. ID должно быть @+id/catName -->
-            <TextView
-                android:id="@+id/catName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jméno kočky"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
-
-            <!-- 3. Порода кошки. ID должно быть @+id/catBreed -->
-            <TextView
-                android:id="@+id/catBreed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Plemeno"
-                android:textAppearance="?attr/textAppearanceBody2" />
-
-            <!-- 4. Возраст кошки. ID должно быть @+id/catAge -->
-            <TextView
-                android:id="@+id/catAge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Věk"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary"/>
-        </LinearLayout>
-
+            android:text="Adoptovat"
+            android:layout_marginTop="10dp"/>
     </LinearLayout>
-
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>

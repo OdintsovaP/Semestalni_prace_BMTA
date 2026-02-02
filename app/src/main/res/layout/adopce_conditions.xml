@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sekce: Podmínky adopce -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Nadpis sekce -->
+        <TextView
+            android:id="@+id/textConditionsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Podmínky adopce"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_700"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Položka 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/textCondition1Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plnoletost"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textCondition1Desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Musíte mít alespoň 18 let."
+                android:textSize="13sp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- Položka 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/textCondition2Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vlastní bydlení"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textCondition2Desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nebo souhlas pronajímatele s chovem zvířat."
+                android:textSize="13sp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- Položka 3 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/textCondition3Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Finanční připravenost"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textCondition3Desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Možnost zajistit stravu a veterinární péči."
+                android:textSize="13sp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- Položka 4 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textCondition4Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Čas a pozornost"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textCondition4Desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ochota věnovat čas péči a hraní s mazlíčkem."
+                android:textSize="13sp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

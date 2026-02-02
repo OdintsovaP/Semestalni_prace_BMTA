@@ -12,8 +12,7 @@ import com.example.mnauhouse.R
 import com.example.mnauhouse.data.model.CartItem
 
 class CartAdapter(
-    private val onUpdateQuantity: (CartItem, Int) -> Unit,
-    private val onRemoveItem: (CartItem) -> Unit
+    private val onUpdateQuantity: (CartItem, Int) -> Unit
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     private var cartItems = listOf<CartItem>()
@@ -36,35 +35,38 @@ class CartAdapter(
     override fun getItemCount() = cartItems.size
 
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         private val imageView: ImageView = itemView.findViewById(R.id.cartItemImage)
         private val nameText: TextView = itemView.findViewById(R.id.cartItemName)
         private val quantityText: TextView = itemView.findViewById(R.id.cartItemQuantity)
         private val priceText: TextView = itemView.findViewById(R.id.cartItemPrice)
-        private val removeButton: View = itemView.findViewById(R.id.removeButton)
-        private val plusButton: ImageButton = itemView.findViewById(R.id.plusButton)
         private val minusButton: ImageButton = itemView.findViewById(R.id.minusButton)
+        private val plusButton: ImageButton = itemView.findViewById(R.id.plusButton)
 
         fun bind(cartItem: CartItem) {
+
             nameText.text = cartItem.name
-            quantityText.text = "Množství: ${cartItem.quantity}"
-            priceText.text = "Cena: ${cartItem.price * cartItem.quantity} Kč"
+            quantityText.text = "${cartItem.quantity}×"
+            priceText.text = "${cartItem.price * cartItem.quantity} Kč"
 
             Glide.with(itemView.context)
                 .load(cartItem.image)
                 .placeholder(R.drawable.img)
                 .into(imageView)
 
-            removeButton.setOnClickListener { onRemoveItem(cartItem) }
-
+            // Zvýšení množství
             plusButton.setOnClickListener {
-                cartItem.quantity += 1
-                onUpdateQuantity(cartItem, cartItem.quantity)
+                val newQuantity = cartItem.quantity + 1
+                onUpdateQuantity(cartItem, newQuantity)
             }
 
+            // Snížení množství nebo odstranění položky
             minusButton.setOnClickListener {
-                if (cartItem.quantity > 1) {
-                    cartItem.quantity -= 1
-                    onUpdateQuantity(cartItem, cartItem.quantity)
+                val newQuantity = cartItem.quantity - 1
+                if (newQuantity > 0) {
+                    onUpdateQuantity(cartItem, newQuantity)
+                } else {
+                    onUpdateQuantity(cartItem, 0)
                 }
             }
         }

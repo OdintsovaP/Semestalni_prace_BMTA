@@ -1,98 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:padding="12dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="4dp">
+    android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <!-- Obrázek položky -->
+    <ImageView
+        android:id="@+id/cartItemImage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img"
+        android:layout_marginEnd="12dp" />
+
+    <!-- Textová část: název, cena -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_weight="1">
 
-        <!-- Obrázek -->
-        <ImageView
-            android:id="@+id/cartItemImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/img" />
-
-        <!-- Název -->
         <TextView
             android:id="@+id/cartItemName"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/removeButton"
-            app:layout_constraintStart_toEndOf="@+id/cartItemImage"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Perníkové cappuccino" />
+            android:text="Název"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-        <!-- Кнопка минус -->
+        <TextView
+            android:id="@+id/cartItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cena"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- Ovládání množství: minus, počet, plus -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- Minus -->
         <ImageButton
             android:id="@+id/minusButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_remove"
-            android:background="?android:attr/selectableItemBackground"
-            app:layout_constraintEnd_toStartOf="@+id/cartItemQuantity"
-            app:layout_constraintTop_toTopOf="@+id/cartItemQuantity" />
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_minus"
+            android:contentDescription="Minus" />
 
-        <!-- Množství -->
+        <!-- Počet porcí -->
         <TextView
             android:id="@+id/cartItemQuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:textColor="?android:attr/textColorSecondary"
-            app:layout_constraintEnd_toStartOf="@+id/plusButton"
-            app:layout_constraintStart_toEndOf="@+id/minusButton"
-            app:layout_constraintTop_toBottomOf="@+id/cartItemName"
-            tools:text="Množství: 1" />
+            android:layout_marginEnd="8dp" />
 
-        <!-- Кнопка плюс -->
+        <!-- Plus -->
         <ImageButton
             android:id="@+id/plusButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@android:color/transparent"
             android:src="@drawable/ic_add"
-            android:background="?android:attr/selectableItemBackground"
-            app:layout_constraintEnd_toStartOf="@+id/removeButton"
-            app:layout_constraintTop_toTopOf="@+id/cartItemQuantity" />
+            android:contentDescription="Plus" />
 
-        <!-- Cena -->
-        <TextView
-            android:id="@+id/cartItemPrice"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:textSize="16sp"
-            android:textColor="?attr/colorPrimary"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/removeButton"
-            app:layout_constraintStart_toEndOf="@+id/cartItemImage"
-            app:layout_constraintTop_toBottomOf="@+id/cartItemQuantity"
-            tools:text="Cena: 95 Kč" />
+    </LinearLayout>
 
-        <!-- Tlačítko odstranit -->
-        <ImageButton
-            android:id="@+id/removeButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?android:attr/selectableItemBackground"
-            android:src="@drawable/ic_remove"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</LinearLayout>

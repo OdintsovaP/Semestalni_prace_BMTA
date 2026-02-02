@@ -11,20 +11,18 @@ import android.widget.GridLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import com.example.mnauhouse.MainActivity
 import com.example.mnauhouse.R
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class AdoptionFragment : Fragment() {
 
-    // Datová třída pro položky zdarma
     data class FreeItem(
         val title: String,
         val price: String,
         val details: List<String>
     )
 
-    // Seznam položek zdarma
     private val freeItems = listOf(
         FreeItem(
             title = "Očkování",
@@ -83,10 +81,8 @@ class AdoptionFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        // GridLayout pro položky zdarma
         val grid = view.findViewById<GridLayout>(R.id.gridFreeItems)
 
-        // Vytvoření karet programově
         freeItems.forEach { item ->
             val card = layoutInflater.inflate(R.layout.item_free_service, grid, false) as CardView
 
@@ -103,20 +99,17 @@ class AdoptionFragment : Fragment() {
             grid.addView(card)
         }
 
-        // Tlačítka nahoře a dole
         view.findViewById<Button>(R.id.buttonCallInfo)?.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL)
             intent.data = Uri.parse("tel:+420777111222")
             startActivity(intent)
         }
 
-
         view.findViewById<Button>(R.id.buttonCall)?.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL)
             intent.data = Uri.parse("tel:+420777111222")
             startActivity(intent)
         }
-
 
         view.findViewById<Button>(R.id.buttonVisit)?.setOnClickListener {
             val gmmIntentUri = Uri.parse("geo:0,0?q=Mnau+House+Cat+Café+Pardubice")
@@ -125,14 +118,12 @@ class AdoptionFragment : Fragment() {
             startActivity(mapIntent)
         }
 
-
         view.findViewById<Button>(R.id.buttonShelterInfo)?.setOnClickListener {
-            findNavController().navigate(R.id.action_adoptionFragment_to_shelterFragment)
+            // Přepnutí na záložku Útulek
+            (activity as MainActivity).bottomNavigationView.selectedItemId = R.id.shelterFragment
         }
-
     }
 
-    // BottomSheetDialog s detaily služby
     private fun showDetailsBottomSheet(item: FreeItem) {
         val dialog = BottomSheetDialog(requireContext())
         val view = layoutInflater.inflate(R.layout.bottomsheet_free_item_details, null)
@@ -144,8 +135,6 @@ class AdoptionFragment : Fragment() {
 
         title.text = item.title
         price.text = item.price
-
-        // Seznam detailů jako odrážky
         list.text = item.details.joinToString("\n• ", prefix = "• ")
 
         close.setOnClickListener { dialog.dismiss() }

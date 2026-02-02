@@ -15,11 +15,11 @@ import com.example.mnauhouse.data.model.MenuItem
 class MenuAdapter(
     private val onItemClick: (MenuItem) -> Unit,
     private val onAddToCartClick: (MenuItem) -> Unit,
-    private val onUpdateCartQuantity: (MenuItem, Int) -> Unit,  // Новый callback для обновления количества
-    private var cartItems: List<CartItem> = emptyList()  // Данные корзины
+    private val onUpdateCartQuantity: (MenuItem, Int) -> Unit
 ) : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
-    private var menuItems = listOf<MenuItem>()
+    private var menuItems: List<MenuItem> = emptyList()
+    private var cartItems: List<CartItem> = emptyList()
 
     fun submitList(items: List<MenuItem>) {
         menuItems = items
@@ -27,8 +27,7 @@ class MenuAdapter(
     }
 
     fun updateCartItems(cart: List<CartItem>) {
-        // Обновить данные корзины и перерисовать
-        (this as MenuAdapter).cartItems = cart
+        cartItems = cart
         notifyDataSetChanged()
     }
 
@@ -42,7 +41,7 @@ class MenuAdapter(
         holder.bind(menuItems[position])
     }
 
-    override fun getItemCount() = menuItems.size
+    override fun getItemCount(): Int = menuItems.size
 
     inner class MenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val imageView: ImageView = itemView.findViewById(R.id.itemImage)
@@ -64,19 +63,16 @@ class MenuAdapter(
                 .placeholder(R.drawable.img)
                 .into(imageView)
 
-            // Найти товар в корзине
             val cartItem = cartItems.find { it.id == menuItem.id }
             val quantity = cartItem?.quantity ?: 0
 
             if (quantity > 0) {
-                // Товар в корзине — показать количество и кнопки + и -
                 addButton.visibility = View.GONE
                 quantityText.visibility = View.VISIBLE
                 minusButton.visibility = View.VISIBLE
                 plusButton.visibility = View.VISIBLE
                 quantityText.text = quantity.toString()
             } else {
-                // Товар не в корзине — показать кнопку добавления
                 addButton.visibility = View.VISIBLE
                 quantityText.visibility = View.GONE
                 minusButton.visibility = View.GONE
@@ -90,7 +86,7 @@ class MenuAdapter(
                 if (quantity > 1) {
                     onUpdateCartQuantity(menuItem, quantity - 1)
                 } else {
-                    onUpdateCartQuantity(menuItem, 0)  // Удалить из корзины
+                    onUpdateCartQuantity(menuItem, 0)
                 }
             }
         }
